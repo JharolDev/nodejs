@@ -1,0 +1,21 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Ejecutar script en PowerShell
+      shell: pwsh
+      run: |
+        for ($i = 1; $i -le 10; $i++) {
+            Write-Host "Hola Mundo $i"
+        }
