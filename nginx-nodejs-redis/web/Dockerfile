@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /web
+WORKDIR /web1
 
 COPY package*.json ./
 
