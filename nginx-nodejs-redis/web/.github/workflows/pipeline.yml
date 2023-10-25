@@ -7,15 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout código
       uses: actions/checkout@v2
 
-    - name: Ejecutar script en PowerShell
-      shell: pwsh
+    - name: Ejecutar script en bash
       run: |
-        for ($i = 1; $i -le 10; $i++) {
-            Write-Host "Hola Mundo $i"
-        }
+        for i in {1..10}
+        do
+            echo "Hola Mundo $i"
+        done
