@@ -1,9 +1,13 @@
-FROM node:14.17.3-alpine3.14
+FROM node:14
 
-WORKDIR /usr/src/app
+WORKDIR /web
 
-COPY package.json package-lock.json ./
-RUN npm ci
-COPY ./server.js ./
+COPY package*.json ./
 
-CMD ["npm","start"]
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
